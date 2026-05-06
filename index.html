@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0"/>
+    <title>Pidgin Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+
+    <div class="screen" id="landing-screen">
+
+      <header>
+        <div class="header-bar"></div>
+        <h1>Pidgin Up</h1>
+        <p class="subtitle">How well you Sabi Nigerian Pidgin?</p>
+        <div class="header-bar"></div>
+      </header>
+
+      <p class="pick-label">Pick your level</p>
+
+      <div class="level-cards">
+
+        <div class="level-card" id="words card" onclick="startGame('words')">
+          <span class="level-icon">💬</span>
+          <h2>Phrases</h2>
+          <p>Common Expressions And Daily talk</p>
+          <span class="level-tag">Intermediate</span>
+        </div>
+
+        <div class="level-card" id="lyrics-card" onclick="startGame('lyrics')">
+          <span class="level-icon">🎵</span>
+          <h2>Lyrics</h2>
+          <p>Lines from Afrobeats and Nigerian music</p>
+          <span class="level-tag">Hard</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="screen hidden" id="game-screen">
+
+      <header>
+        <div class="header-bar"></div>
+        <h1>Pidgin Up</h1>
+        <div class="header-bar"></div>
+      </header>
+
+      <div class="game-stats">
+        <span id="level-label">Words</span>
+        <span id="score-display">Score: 0</span>
+        <span id="streak-display">🔥 0</span>
+      </div>
+
+      <div class="notecard" id="notecard">
+        <p class="notecard-label">Translate this</p>
+        <p class="pidgin-text" id="pidgin-text">Loading...</p>
+      </div>
+
+      <div class="feedback-box hidden" id="feedback-box">
+        <p id="feedback-text"></p>
+        <p class="cultural-note hidden" id="cultural-note"></p>
+      </div>
+
+      <div class="answer area">
+        <input
+          type="text"
+          id="answer-input"
+          placeholder="Type your answer in English..."
+          autocomplete="off"
+          />
+        <button id="submit-btn">Send</button>
+      </div>
+
+      <div class="game-controls">
+        <button id="skip-btn">Skip</button>
+        <button id="back-btn">← Back</button>
+      </div>
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
