@@ -129,11 +129,14 @@ if (!raw) return;
 
 const correct = item.accept.some(a => {
   const accepted = a.toLowerCase();
-  const words = accepted.split(' ');
-  const matchedWords = words.filter(w => raw.includes(w) && w.length > 3);
-  return matchedWords.length >= Math.ceil(words.length * 0.5);
+  const rawWords = raw.split(' ').filter(w => w.length > 2);
+  const acceptWords = accepted.split(' ').filter(w => w.length > 2);
+  const matched = acceptWords.filter(w => raw.includes(w));
+  const reverseMatch = rawWords.filter(w => accepted.includes(w));
+  return matched.length >= Math.ceil(acceptWords.length * 0.4) ||
+    reverseMatch.length >= Math.ceil(rawWords.length * 0.5);
 });
-
+  
 state.answered = true;
   document.getElementById('answer-input').disabled = true;
 
