@@ -58,6 +58,8 @@ let state = {
   answered: false
 };
 
+window.startGame = startGame;
+
 function startGame(mode) {
   state.mode = mode;
   state.deck = shuffle([...data[mode]]);
@@ -70,7 +72,7 @@ function startGame(mode) {
 document.getElementById('landing-screen').classList.add('hidden');
 document.getElementById('game-screen').classList.remove('hidden');
 document.getElementById('level-label').textContent =
-  mode.charAt(0).toUppercase() + mode.slice(1);
+  mode.charAt(0).toUpperCase() + mode.slice(1);
 
 loadQuestion();
 }
@@ -155,7 +157,7 @@ updateStats();
 }
 
 function getCorrectResponse() {
-  const response = [
+  const responses = [
      "You sabi! 🔥",
     "Correct! Na you bam!",
     "Yes! You don get am!",
