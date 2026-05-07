@@ -182,6 +182,7 @@ function showResult() {
 }
 
 window.startGame = startGame;
+
 document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById('submit-btn').addEventListener('click', function() {
