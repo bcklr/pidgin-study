@@ -129,7 +129,7 @@ const correct = item.accept.some(a => raw.includes(a.toLowerCase()) ||
   a.toLowerCase().includes(raw));
 
 state.answered = true;
-  document.getElementById('answer-input).disabled = true;
+  document.getElementById('answer-input').disabled = true;
 
     const feedback = document.getElementById('feedback-box');
   const feedbackText = document.getElementById('feedback-text');
