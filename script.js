@@ -98,7 +98,7 @@ const feedback = document.getElementById('feedback-box');
   feedback.classList.add('hidden');
   feedback.classList.remove('correct', 'wrong');
   document.getElementById('cultural-note').classList.add('hidden');
-
+  document.getElementById('hint-text').classList.add('hidden');
 updateStats();
 }
 
@@ -198,6 +198,13 @@ document.getElementById('submit-btn').addEventListener('click', function() {
   checkAnswer();
 });
 
+  document.getElementById('hint-btn').addEventListener('click', function() {
+  const item = state.deck[state.current];
+  const hintEl = document.getElementById('hint-text');
+  hintEl.textContent = '💡 ' + item.note;
+  hintEl.classList.remove('hidden');
+});
+  
 document.getElementById('answer-input').addEventListener('keydown', function(e) {
   if (e.key === 'Enter') {
     checkAnswer();
