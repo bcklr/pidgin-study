@@ -99,7 +99,8 @@ const feedback = document.getElementById('feedback-box');
   feedback.classList.remove('correct', 'wrong');
   document.getElementById('cultural-note').classList.add('hidden');
   document.getElementById('hint-text').classList.add('hidden');
-updateStats();
+ 
+  updateStats();
 }
 
 function updateStats() {
