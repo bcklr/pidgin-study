@@ -127,8 +127,12 @@ const item = state.deck[state.current];
 
 if (!raw) return;
 
-const correct = item.accept.some(a => raw.includes(a.toLowerCase()) ||
-  a.toLowerCase().includes(raw));
+const correct = item.accept.some(a => {
+  const accepted = a.toLowerCase();
+  const words = accepted.split(' ');
+  const matchedWords = words.filter(w => raw.includes(w) && w.length > 3);
+  return matchedWords.length >= Math.ceil(words.length * 0.5);
+});
 
 state.answered = true;
   document.getElementById('answer-input').disabled = true;
