@@ -430,3 +430,31 @@ button:active {
 .hidden {
   display: none;
 }
+
+
+.hint-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #c8972a;
+  margin-top: 0.5rem;
+}
+
+#hint-btn {
+  font-size: 0.75rem;
+  padding: 0.4rem 1rem;
+  background: transparent;
+  border: 1px solid #e0d8c8;
+  color: #aaa;
+  box-shadow: none;
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+
+#hint-btn:hover {
+  background: #f0ebe0;
+  color: #111;
+  border-color: #bbb;
+  transform: none;
+  box-shadow: none;
+}
